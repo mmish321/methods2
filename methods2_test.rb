@@ -25,6 +25,19 @@ class Methods2Test < MiniTest::Test
   	assert_equal true, @m.squirrel_party(40, false)
   	assert_equal false, @m.squirrel_party(20, false)
   	assert_equal true, @m.squirrel_party(75, true)
-  	asssert_equal false, @m.squirrel_party(25, true)
+  	assert_equal false, @m.squirrel_party(25, true)
+  end
+  def test_ticket
+  	assert_equal 10, @m.ticket(5,5,6)
+  	assert_equal 5, @m.ticket(5,25,15)
+  	assert_equal 0, @m.ticket(1,2,3)
+  end
+  def test_in_order
+ 	assert_equal true, @m.in_order?(1,2,3,false)
+  assert_equal true, @m.in_order?(2,1,3,true)
+  assert_equal true, @m.in_order?(1,2,3 ,true)
+  assert_equal false, @m.in_order?(4,2,1,true)
+  assert_equal false, @m.in_order?(4,5,2,true)
+  assert_equal false, @m.in_order?(4,2,1,false)
   end
 end

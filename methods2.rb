@@ -22,11 +22,11 @@ module Methods2
 	end
 	
 	def squirrel_party(intnuts, weekend)
-		if(nuts >= 40)
+		if(intnuts >= 40)
 			if weekend
 				return true
 			else
-				if nuts >= 60
+				if intnuts >= 60
 					return false 
 				else
 					true
@@ -36,7 +36,44 @@ module Methods2
 			false
 		end
 	end
-	# TODO - write ticket
+	def ticket(a ,b ,c)
+		ab = a + b
+		ac = a + c
+		bc = b + c
+		if ab == 10  || ac == 10 || bc == 10
+			10
+		else
+			if (ab - 10) == bc
+				5
+			elsif (ab - 10) == ac
+				5
+			else
+			0
+			end
+		end
+	end
+			
+	def in_order?(a,b,c,bOk)
+		if bOk
+			if c > b && !(b > a) 
+				true
+			elsif c > b
+				true
+			else
+				false
+			end
+		else
+			if b > a && c > b
+				true
+			else
+				false
+			end
+		end
+	end
+
+
+
+	
 
 	# TODO - write in_order?
 
