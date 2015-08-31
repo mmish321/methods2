@@ -39,5 +39,7 @@ class Methods2Test < MiniTest::Test
   assert_equal false, @m.in_order?(4,2,1,true)
   assert_equal false, @m.in_order?(4,5,2,true)
   assert_equal false, @m.in_order?(4,2,1,false)
+  assert_equal false, @m.in_order?(1,1,1,false)
+  assert_equal false, @m.in_order?(1,1,1,true)
   end
 end
