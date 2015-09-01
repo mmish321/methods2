@@ -42,4 +42,33 @@ class Methods2Test < MiniTest::Test
   assert_equal false, @m.in_order?(1,1,1,false)
   assert_equal false, @m.in_order?(1,1,1,true)
   end
+  def test_less_by_ten
+  assert_equal false, @m.less_by_ten?(10,10,10)
+  assert_equal true, @m.less_by_ten?(10,10,-10)
+  assert_equal true, @m.less_by_ten?(16,6,6)
+  assert_equal true, @m.less_by_ten?(6,16,6)
+  assert_equal true, @m.less_by_ten?(6,6,16)
+  end
+  def test_fizz_string
+  	assert_equal "Fizz", @m.fizz_string("free")
+  	assert_equal "Buzz", @m.fizz_string("bob")
+  	assert_equal "FizzBuzz", @m.fizz_string("fizzbub")
+  end
+  def test_first_last_six
+  	assert_equal true, @m.first_last_six([6,7,8,])
+  	assert_equal false, @m.first_last_six([1,2,3])
+  	assert_equal true, @m.first_last_six([7,8,6])
+  	assert_equal true, @m.first_last_six([6,9,6])
+  end
+  def test_rotate_left
+  	assert_equal [2,3,1], @m.rotate_left([1,2,3])
+  	assert_equal [6,7,8], @m.rotate_left([8,6,7])
+  end
+  def test_double23
+  	assert_equal false, @m.double23([0])
+  	assert_equal false, @m.double23([0,2])
+  	assert_equal true , @m.double23([2,2])
+  	assert_equal true, @m.double23([3,3])
+  	assert_equal false, @m.double23([])
+  end 
 end

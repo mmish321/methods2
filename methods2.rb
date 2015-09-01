@@ -71,20 +71,60 @@ module Methods2
 		end
 	end
 
+	def less_by_ten?(a,b,c)
+		ab = (a - b).abs
+		ac = (a - c).abs
+		bc = (b - c).abs
+		if ac >= 10 || ab >= 10 || bc >= 10
+			true
+		else
+			false
+		end
+	end
+	def fizz_string(str)
+		if str.start_with?('f') && str.end_with?('b')
+			"FizzBuzz"
+		else
+			if str.start_with?('f')
+				"Fizz"
+			elsif str.end_with?('b')
+				"Buzz"
+			else
+				str
+			end
+		end
+	end
 
+	def first_last_six(ints)
+		if ints.first == 6 || ints.last == 6
+			true
+		else
+			false
+		end
 
+	end
+
+	def rotate_left(ints)
+		first = ints.shift
+		ints << first
+		ints
+	end
+	def double23(ints)
+		if(ints.length == 2)
+			if((ints.first == 2) && (ints.last == 2) || (ints.first == 3) && (ints.last == 3))
+				true
+			else 
+				false
+			end
+		else
+			false
+		end
+
+	end
+	
+	
 	
 
-	# TODO - write in_order?
 
-	# TODO - write less_by_ten?
-	
-	# TODO - write fizz_string
-
-	# TODO - write first_last_six?
-
-	# TODO - write rotate_left
-
-	# TODO - write double23?
 
 end
